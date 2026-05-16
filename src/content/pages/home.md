@@ -1,7 +1,7 @@
 ---
 heroHeading: "PPP Test Goodness"
 heroSubheading: "For lifelong lovers of goodness."
-heroImage: "/assets/heroes/hero.jpeg"
+heroImage: "/src//assets/heroes/hero.jpg"
 ---
 
 Welcome to the site.
