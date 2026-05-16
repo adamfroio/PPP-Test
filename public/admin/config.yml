@@ -1,0 +1,31 @@
+backend:
+    name: github
+    repo: adamfroio/PPP-Test # change to your repo
+    branch: main
+    #base_url: https://prasannapilakaphotography.com   # or your .pages.dev URL for now
+    base_url: https://ppp-test-5o0.pages.dev
+    auth_endpoint: api/auth
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+    - name: "pages"
+      label: "Pages"
+      files:
+          - file: "src/content/pages/home.md"
+            label: "Home Page"
+            name: "home"
+            fields:
+                - {
+                      label: "Hero Heading",
+                      name: "heroHeading",
+                      widget: "string",
+                  }
+                - {
+                      label: "Hero Subheading",
+                      name: "heroSubheading",
+                      widget: "text",
+                  }
+                - { label: "Hero Image", name: "heroImage", widget: "image" }
+                - { label: "Body", name: "body", widget: "markdown" }
