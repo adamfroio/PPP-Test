@@ -1,17 +1,27 @@
 ---
+import { getEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 
+const home = await getEntry('pages', 'home');
+const { heroHeading, heroSubheading, heroImage } = home.data;
+const { Content } = await home.render();
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>PPP</title>
-	</head>
-	<body>
-		<h1>PPP</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PPP</title>
+  </head>
+  <body>
+    <section class="hero">
+      <img src={heroImage} alt="" />
+      <h1>{heroHeading}</h1>
+      <p>{heroSubheading}</p>
+    </section>
+
+    <section class="body">
+      <Content />
+    </section>
+  </body>
 </html>
